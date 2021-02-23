@@ -117,7 +117,7 @@ const generateReadMe = (answers) => { var title =
  var install; 
  if(answers.installationq = 'yes'){ install =
      `## Installation Instructions <a name="installation"></a><br>
-    ${answers.installation}`
+${answers.installation}`
  }
  else ``; 
  var use =`## Usage Guidelines <a name="usage"></a>
@@ -154,7 +154,7 @@ if(answers.testq = 'yes'){ test =
     `## Tests for this Application <a name="tests"></a><br>
     ${answers.test}`
 }
-else `no current tests written`;
+else test = `no current tests written`;
 var quest =`## Questions, Comments or Concerns <a name="questions"></a><br>
 ### Please direct to my GitHub or Email
 Git Hub: [${answers.github}](https://www.github.com/${answers.github})<br>
