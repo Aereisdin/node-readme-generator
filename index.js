@@ -100,7 +100,7 @@ const generateReadMe = (answers) => { var title =
         else if(answers.license = 'Unlicense License'){
             topBadge = `[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)`};
 
- var desc = `## ${answers.description}`; 
+ var desc = `### ${answers.description}`; 
  var table;
  if(answers.contents = 'yes'){ 
      table =
@@ -116,7 +116,8 @@ const generateReadMe = (answers) => { var title =
  else ``;
  var install; 
  if(answers.installationq = 'yes'){ install =
-     `## Installation Instructions <a name="installation"></a><br> ${answers.installation}`
+     `## Installation Instructions <a name="installation"></a><br>
+    ${answers.installation}`
  }
  else ``; 
  var use =`## Usage Guidelines <a name="usage"></a>
@@ -145,8 +146,7 @@ const generateReadMe = (answers) => { var title =
 
 var contrib;
 if(answers.contributorsq = 'yes'){contrib =
-    `## Contributors <a name="contributors"></a><br>
-    ${answers.contributors}`
+    `## Contributors <a name="contributors"></a><br> ${answers.contributors}`
 }
 else ``;
 var test;
@@ -154,9 +154,9 @@ if(answers.testq = 'yes'){ test =
     `## Tests for this Application <a name="tests"></a><br>
     ${answers.test}`
 }
-else ``;
+else `no current tests written`;
 var quest =`## Questions, Comments or Concerns <a name="questions"></a><br>
-## Please direct to my GitHub or Email
+### Please direct to my GitHub or Email
 Git Hub: [${answers.github}](https://www.github.com/${answers.github})<br>
 Email: [${answers.email}](${answers.email})<br>
 
