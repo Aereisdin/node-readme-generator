@@ -82,7 +82,7 @@ const promptUser = () => {
 
 const generateReadMe = (answers) => {
  `#${answers.name}`;
-switch (`${answers.license}`) {
+switch (answers.license) {
     case 'MIT license': `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`;
     break;
     case 'GNU AGPLv3': `[![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)`;
