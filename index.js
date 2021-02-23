@@ -80,89 +80,95 @@ const promptUser = () => {
   ]);
 };
 
-const generateReadMe = (answers) => {
- `#${answers.name}`;
-switch (answers.license) {
-    case 'MIT license': `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`;
-    break;
-    case 'GNU AGPLv3': `[![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)`;
-    break;    
-    case 'GNU GPLv3': `[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)`;
-    break;    
-    case 'GNU LGPLv3': `[![License: LGPL v3](https://img.shields.io/badge/License-LGPL%20v3-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0)`;
-    break;
-    case 'Mozilla Public License 2.0': `[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)`;
-    break;
-    case 'Apache License 2.0': `[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)`;
-    break;
-    case 'Boost Software License': `[![License](https://img.shields.io/badge/License-Boost%201.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)`;
-    break;  
-    case 'Unlicense License': `[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)`;
-    break;       
-    default: `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`;
-    break;
-};
- `<a name="description'></a>${answers.description}`;
- if(answers.contents = 'yes'){
-     `# Table of Contents
-     ## 1. [Description](#description)
-     ## 2. [Installation](#installation)
-     ## 3. [Usage](#usage)
-     ## 4. [License](#license)
-     ## 5. [Contributors](#contributors)
-     ## 6. [Tests](#tests)
-     ## 7. [Questions](#questions)`
- };
- if(answers.installationq = 'yes'){
-     `# Installation Instructions <a name="installation'></a>
-     ${answers.installation}`
- };
- `# Usage Guidelines <a name="usage"></a>
- ${answers.usage}
+const generateReadMe = (answers) => { var title = 
+    `# ${answers.name}`;
+    var topBadge;
+        if (answers.license = 'MIT license') {
+            topBadge = `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`}
+        else if(answers.license = 'GNU AGPLv3'){
+                topBadge = `[![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)`}
+        else if(answers.license = 'GNU GPLv3'){
+            topBadge = `[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)`}
+        else if(answers.license = 'GNU LGPLv3'){
+            topBadge = `[![License: LGPL v3](https://img.shields.io/badge/License-LGPL%20v3-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0)`}
+        else if(answers.license = 'Mozilla Public License 2.0'){
+            topBadge = `[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)`}
+        else if(answers.license = 'Apache License 2.0'){
+            topBadge = `[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)`}
+        else if(answers.license = 'Boost Software License'){
+            topBadge = `[![License](https://img.shields.io/badge/License-Boost%201.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)`}
+        else if(answers.license = 'Unlicense License'){
+            topBadge = `[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)`};
+
+ var desc = `## ${answers.description}`; 
+ var table;
+ if(answers.contents = 'yes'){ 
+     table =
+     `## Table of Contents
+1. [Description](#description)
+2. [Installation](#installation)
+3. [Usage](#usage)
+4. [License](#license)
+5. [Contributors](#contributors)
+6. [Tests](#tests)
+7. [Questions](#questions)`
+ }
+ else ``;
+ var install; 
+ if(answers.installationq = 'yes'){ install =
+     `## Installation Instructions <a name="installation"></a><br> ${answers.installation}`
+ }
+ else ``; 
+ var use =`## Usage Guidelines <a name="usage"></a>
+ ${answers.usage}`
  
- # License for Application <a name="license"></a>
- ${answers.license}
- If you click the badge below it will take you to the license details.`;
- switch (answers.license) {
-    case 'MIT license': `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`;
-    break;
-    case 'GNU AGPLv3': `[![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)`;
-    break;    
-    case 'GNU GPLv3': `[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)`;
-    break;    
-    case 'GNU LGPLv3': `[![License: LGPL v3](https://img.shields.io/badge/License-LGPL%20v3-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0)`;
-    break;
-    case 'Mozilla Public License 2.0': `[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)`;
-    break;
-    case 'Apache License 2.0': `[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)`;
-    break;
-    case 'Boost Software License': `[![License](https://img.shields.io/badge/License-Boost%201.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)`;
-    break;  
-    case 'Unlicense License': `[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)`;
-    break;       
-    default: `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`;
-    break;
-};
-if(answers.contributorsq = 'yes'){
-    `# Contributors <a name="contributors"></a>
+ var lic =`## License for this Application <a name="license"></a><br>
+ If you click the badge below it will take you to the license details.<br>
+ ${answers.license}<br>`;
+ var midBadge;
+    if (answers.license = 'MIT license') {
+        midBadge = `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`}
+    else if(answers.license = 'GNU AGPLv3'){
+            midBadge = `[![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)`}
+    else if(answers.license = 'GNU GPLv3'){
+        midBadge = `[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)`}
+    else if(answers.license = 'GNU LGPLv3'){
+        midBadge = `[![License: LGPL v3](https://img.shields.io/badge/License-LGPL%20v3-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0)`}
+    else if(answers.license = 'Mozilla Public License 2.0'){
+        midBadge = `[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)`}
+    else if(answers.license = 'Apache License 2.0'){
+        midBadge = `[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)`}
+    else if(answers.license = 'Boost Software License'){
+        midBadge = `[![License](https://img.shields.io/badge/License-Boost%201.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)`}
+    else if(answers.license = 'Unlicense License'){
+        midBadge = `[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)`};
+
+var contrib;
+if(answers.contributorsq = 'yes'){contrib =
+    `## Contributors <a name="contributors"></a><br>
     ${answers.contributors}`
-};
-if(answers.testq = 'yes'){
-    `# Tests for this Application <a name"tests'></a>
+}
+else ``;
+var test;
+if(answers.testq = 'yes'){ test =
+    `## Tests for this Application <a name="tests"></a><br>
     ${answers.test}`
-};
-`# Questions, Comments or Concerns <a name="questions"></a>
+}
+else ``;
+var quest =`## Questions, Comments or Concerns <a name="questions"></a><br>
 ## Please direct to my GitHub or Email
-${answers.github}
-${answers.email}
+Git Hub: [${answers.github}](https://www.github.com/${answers.github})<br>
+Email: [${answers.email}](${answers.email})<br>
 
 Thank you for checking out my application!`;
-}
+var space = `
+`;
+var readmetext = `${title}${space}${topBadge}${space}${desc}${space}${table}${space}${install}${space}${use}${space}${lic}${space}${midBadge}${space}${contrib}${space}${test}${space}${quest}`;
+return readmetext};
 // Bonus using writeFileAsync as a promise
 const init = () => {
   promptUser()
     .then((answers) => writeFileAsync('README.md', generateReadMe(answers)))
-    .then((answers) => console.log(answers))
     .then(() => console.log('Successfully wrote to README.md'))
     .catch((err) => console.error(err));
 };
