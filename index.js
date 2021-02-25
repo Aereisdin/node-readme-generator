@@ -115,9 +115,8 @@ const generateReadMe = (answers) => { var title =
  }
  else ``;
  var install; 
- if(answers.installationq = 'yes'){ install =
-     `## Installation Instructions <a name="installation"></a><br>
-${answers.installation}`
+ if(answers.installationq = 'yes'){ install = `## Installation Instructions <a name="installation"></a><br>
+ ${answers.installation}`
  }
  else ``; 
  var use =`## Usage Guidelines <a name="usage"></a>
